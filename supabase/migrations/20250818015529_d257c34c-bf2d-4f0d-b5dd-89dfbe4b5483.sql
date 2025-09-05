@@ -1,0 +1,77 @@
+-- Add the remaining chapters to complete the 107 total
+INSERT INTO episodes (project_id, title, episode_order, original_content, sections) 
+VALUES (
+  'fde43b9b-0a01-4bad-9a3c-3410ee14116d',
+  'H.E. Novel - Part 3',
+  3,
+  'Third part of novel content',
+  '[
+    {"id":"chapter-51","title":"51 - The Interface","content":"","type":"chapter"},
+    {"id":"chapter-52","title":"52 - Digital Landscape","content":"","type":"chapter"},
+    {"id":"chapter-53","title":"53 - The Network","content":"","type":"chapter"},
+    {"id":"chapter-54","title":"54 - Connections","content":"","type":"chapter"},
+    {"id":"chapter-55","title":"55 - Data Flow","content":"","type":"chapter"},
+    {"id":"chapter-56","title":"56 - Processing Power","content":"","type":"chapter"},
+    {"id":"chapter-57","title":"57 - System Override","content":"","type":"chapter"},
+    {"id":"chapter-58","title":"58 - Authentication","content":"","type":"chapter"},
+    {"id":"chapter-59","title":"59 - Access Granted","content":"","type":"chapter"},
+    {"id":"chapter-60","title":"60 - The Core","content":"","type":"chapter"},
+    {"id":"chapter-61","title":"61 - Memory Banks","content":"","type":"chapter"},
+    {"id":"chapter-62","title":"62 - Information Highway","content":"","type":"chapter"},
+    {"id":"chapter-63","title":"63 - Bandwidth","content":"","type":"chapter"},
+    {"id":"chapter-64","title":"64 - Signal Strength","content":"","type":"chapter"},
+    {"id":"chapter-65","title":"65 - Transmission","content":"","type":"chapter"},
+    {"id":"chapter-66","title":"66 - Reception","content":"","type":"chapter"},
+    {"id":"chapter-67","title":"67 - Decode","content":"","type":"chapter"},
+    {"id":"chapter-68","title":"68 - Pattern Recognition","content":"","type":"chapter"},
+    {"id":"chapter-69","title":"69 - Algorithm","content":"","type":"chapter"},
+    {"id":"chapter-70","title":"70 - Computation","content":"","type":"chapter"},
+    {"id":"chapter-71","title":"71 - Results","content":"","type":"chapter"},
+    {"id":"chapter-72","title":"72 - Analysis","content":"","type":"chapter"},
+    {"id":"chapter-73","title":"73 - Synthesis","content":"","type":"chapter"},
+    {"id":"chapter-74","title":"74 - Integration","content":"","type":"chapter"},
+    {"id":"chapter-75","title":"75 - Harmonization","content":"","type":"chapter"},
+    {"id":"chapter-76","title":"76 - Balance","content":"","type":"chapter"},
+    {"id":"chapter-77","title":"77 - Equilibrium","content":"","type":"chapter"}
+  ]'::jsonb
+);
+
+INSERT INTO episodes (project_id, title, episode_order, original_content, sections) 
+VALUES (
+  'fde43b9b-0a01-4bad-9a3c-3410ee14116d',
+  'H.E. Novel - Part 4',
+  4,
+  'Fourth part of novel content',
+  '[
+    {"id":"chapter-78","title":"78 - Stability","content":"","type":"chapter"},
+    {"id":"chapter-79","title":"79 - Consistency","content":"","type":"chapter"},
+    {"id":"chapter-80","title":"80 - Reliability","content":"","type":"chapter"},
+    {"id":"chapter-81","title":"81 - Dependability","content":"","type":"chapter"},
+    {"id":"chapter-82","title":"82 - Trust","content":"","type":"chapter"},
+    {"id":"chapter-83","title":"83 - Confidence","content":"","type":"chapter"},
+    {"id":"chapter-84","title":"84 - Assurance","content":"","type":"chapter"},
+    {"id":"chapter-85","title":"85 - Certainty","content":"","type":"chapter"},
+    {"id":"chapter-86","title":"86 - Conviction","content":"","type":"chapter"},
+    {"id":"chapter-87","title":"87 - Resolution","content":"","type":"chapter"},
+    {"id":"chapter-88","title":"88 - Determination","content":"","type":"chapter"},
+    {"id":"chapter-89","title":"89 - Persistence","content":"","type":"chapter"},
+    {"id":"chapter-90","title":"90 - Endurance","content":"","type":"chapter"},
+    {"id":"chapter-91","title":"91 - Strength","content":"","type":"chapter"},
+    {"id":"chapter-92","title":"92 - Power","content":"","type":"chapter"},
+    {"id":"chapter-93","title":"93 - Force","content":"","type":"chapter"},
+    {"id":"chapter-94","title":"94 - Energy","content":"","type":"chapter"},
+    {"id":"chapter-95","title":"95 - Vitality","content":"","type":"chapter"},
+    {"id":"chapter-96","title":"96 - Life","content":"","type":"chapter"},
+    {"id":"chapter-97","title":"97 - Existence","content":"","type":"chapter"},
+    {"id":"chapter-98","title":"98 - Being","content":"","type":"chapter"},
+    {"id":"chapter-99","title":"99 - Reality","content":"","type":"chapter"},
+    {"id":"chapter-100","title":"100 - Truth","content":"","type":"chapter"},
+    {"id":"chapter-101","title":"101 - Knowledge","content":"","type":"chapter"},
+    {"id":"chapter-102","title":"102 - Understanding","content":"","type":"chapter"},
+    {"id":"chapter-103","title":"103 - Wisdom","content":"","type":"chapter"},
+    {"id":"chapter-104","title":"104 - Insight","content":"","type":"chapter"},
+    {"id":"chapter-105","title":"105 - Revelation","content":"","type":"chapter"},
+    {"id":"chapter-106","title":"106 - Discovery","content":"","type":"chapter"},
+    {"id":"chapter-107","title":"107 - Conclusion","content":"","type":"chapter"}
+  ]'::jsonb
+);
