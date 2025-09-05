@@ -1,0 +1,90 @@
+import { useState, useEffect } from "react";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { supabase } from "@/integrations/supabase/client";
+import { User, Session } from "@supabase/supabase-js";
+import { MainLayout } from "@/components/MainLayout";
+import { InviteHandler } from "@/components/InviteHandler";
+import { LogOut } from "lucide-react";
+
+const Index = () => {
+  const [selectedProject, setSelectedProject] = useState<string | null>(null);
+  const [selectedEpisode, setSelectedEpisode] = useState<string | null>(null);
+  const [user, setUser] = useState<User | null>(null);
+  const [session, setSession] = useState<Session | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
+  
+  const inviteCode = searchParams.get('invite');
+
+  useEffect(() => {
+    // Set up auth state listener FIRST
+    const { data: { subscription } } = supabase.auth.onAuthStateChange(
+      (event, session) => {
+        console.log('Auth state change:', event, session?.user?.id);
+        setSession(session);
+        setUser(session?.user ?? null);
+        setLoading(false);
+        
+      if (!session) {
+        navigate('/auth');
+      }
+      }
+    );
+
+    // THEN check for existing session
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      console.log('Initial session check:', session?.user?.id);
+      setSession(session);
+      setUser(session?.user ?? null);
+      setLoading(false);
+      
+      if (!session) {
+        navigate('/auth');
+      }
+    });
+
+    return () => subscription.unsubscribe();
+  }, [navigate]);
+
+  const handleSignOut = async () => {
+    await supabase.auth.signOut();
+  };
+
+  const handleProjectSelect = (projectId: string | null) => {
+    console.log('Selecting project:', projectId);
+    setSelectedProject(projectId);
+  };
+
+  if (loading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-background">
+        <div>Loading...</div>
+      </div>
+    );
+  }
+
+  if (!user || !session) {
+    return null; // Will redirect to auth
+  }
+
+  return (
+    <div className="min-h-screen bg-background">
+        <MainLayout
+          selectedProject={selectedProject}
+          onProjectSelect={handleProjectSelect}
+          selectedEpisode={selectedEpisode}
+          onEpisodeSelect={setSelectedEpisode}
+          user={user}
+        />
+        
+        <InviteHandler 
+          inviteCode={inviteCode || undefined}
+          onProjectSelect={handleProjectSelect}
+        />
+    </div>
+  );
+};
+
+export default Index;
